@@ -25,7 +25,8 @@
                                 class="w-24 h-24 rounded-full cursor-pointer"
                                 :class="[
                                     `bg-${button.color}-600`,
-                                    `hover:bg-${button.color}-500`
+                                    `hover:bg-${button.color}-500`,
+                                    button.id == selected && 'border-8 border-white'
                                 ]"
                             ></span>
                         </template>
