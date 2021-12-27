@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link href="./styles.css" rel="stylesheet">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <title>Radio</title>
+</head>
+
+<body class="p-8 bg-slate-100 antialiased">
+    <h1 class="text-5xl">Radio</h1>
+    <div class="mt-24 flex flex-row" x-data="radio()">
+        <div>
+            <!-- Radio -->
+            <div class="max-w-4xl border-[2rem] border-slate-300 rounded-[5rem]">
+                <div class="mt-32 pt-8 flex bg-slate-300">
+                    <div class="mr-8 flex-grow flex items-center justify-center">
+                        <div class="w-64 h-64 bg-slate-600 rounded-full"></div>
+                    </div>
+                    <div class="grid grid-cols-4 gap-4">
+                        <span @click="select('btn1')" class="w-24 h-24 bg-red-600 rounded-full"></span>
+                        <span @click="select('btn2')" class="w-24 h-24 bg-orange-600 rounded-full"></span>
+                        <span class="w-24 h-24 bg-amber-600 rounded-full"></span>
+                        <span class="w-24 h-24 bg-yellow-600 rounded-full"></span>
+                        <span class="w-24 h-24 bg-lime-600 rounded-full"></span>
+                        <span class="w-24 h-24 bg-emerald-600 rounded-full"></span>
+                        <span class="w-24 h-24 bg-cyan-600 rounded-full"></span>
+                        <span class="w-24 h-24 bg-blue-600 rounded-full"></span>
+                        <span class="w-24 h-24 bg-indigo-600 rounded-full"></span>
+                        <span class="w-24 h-24 bg-purple-600 rounded-full"></span>
+                        <span class="w-24 h-24 bg-fuchsia-600 rounded-full"></span>
+                        <span class="w-24 h-24 bg-pink-600 rounded-full"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- List -->
+        <div class="ml-8 flex-grow">
+
+            <div class="p-4 rounded bg-slate-300" x-text="playlist[selected]"></div>
+
+            <div class="mt-8">
+
+                <button class="py-3 px-6 text-lg text-gray-200 bg-gray-800 rounded">
+                    Nahrát
+                </button>
+
+                <button class="py-3 px-6 text-lg text-gray-200 bg-gray-800 rounded">
+                    Uložit
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function radio() {
+            return {
+                selected: null,
+
+                select(btn) {
+                    this.selected = btn;
+                },
+
+                playlist: {
+                    btn1: "test1",
+                    btn2: "test2"
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>
