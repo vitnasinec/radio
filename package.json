@@ -2,9 +2,9 @@
   "name": "radio",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron ."
   },
   "repository": {
     "type": "git",
@@ -17,5 +17,6 @@
   },
   "homepage": "https://github.com/vitnasinec/radio#readme",
   "devDependencies": {
+    "electron": "^16.0.5"
   }
 }
