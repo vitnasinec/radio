@@ -19,18 +19,16 @@
                         <div class="w-64 h-64 bg-slate-600 rounded-full"></div>
                     </div>
                     <div class="grid grid-cols-4 gap-4">
-                        <span @click="select('btn1')" class="w-24 h-24 bg-red-600 rounded-full"></span>
-                        <span @click="select('btn2')" class="w-24 h-24 bg-orange-600 rounded-full"></span>
-                        <span class="w-24 h-24 bg-amber-600 rounded-full"></span>
-                        <span class="w-24 h-24 bg-yellow-600 rounded-full"></span>
-                        <span class="w-24 h-24 bg-lime-600 rounded-full"></span>
-                        <span class="w-24 h-24 bg-emerald-600 rounded-full"></span>
-                        <span class="w-24 h-24 bg-cyan-600 rounded-full"></span>
-                        <span class="w-24 h-24 bg-blue-600 rounded-full"></span>
-                        <span class="w-24 h-24 bg-indigo-600 rounded-full"></span>
-                        <span class="w-24 h-24 bg-purple-600 rounded-full"></span>
-                        <span class="w-24 h-24 bg-fuchsia-600 rounded-full"></span>
-                        <span class="w-24 h-24 bg-pink-600 rounded-full"></span>
+                        <template x-for="button in buttons">
+                            <span
+                                @click="select(button.id)"
+                                class="w-24 h-24 rounded-full cursor-pointer"
+                                :class="[
+                                    `bg-${button.color}-600`,
+                                    `hover:bg-${button.color}-500`
+                                ]"
+                            ></span>
+                        </template>
                     </div>
                 </div>
             </div>
@@ -57,6 +55,21 @@
     <script>
         function radio() {
             return {
+                buttons: [
+                    { id: 'btn1', color: 'red' },
+                    { id: 'btn2', color: 'orange' },
+                    { id: 'btn3', color: 'amber' },
+                    { id: 'btn4', color: 'yellow' },
+                    { id: 'btn5', color: 'lime' },
+                    { id: 'btn6', color: 'emerald' },
+                    { id: 'btn7', color: 'cyan' },
+                    { id: 'btn8', color: 'blue' },
+                    { id: 'btn9', color: 'indigo' },
+                    { id: 'btn10', color: 'purple' },
+                    { id: 'btn11', color: 'fuchsia' },
+                    { id: 'btn12', color: 'pink' },
+                ],
+
                 selected: null,
 
                 select(btn) {
@@ -64,8 +77,18 @@
                 },
 
                 playlist: {
-                    btn1: "test1",
-                    btn2: "test2"
+                    btn1: 'demo song red',
+                    btn2: 'demo song orange',
+                    btn3: 'demo song amber',
+                    btn4: 'demo song yellow',
+                    btn5: 'demo song lime',
+                    btn6: 'demo song emerald',
+                    btn7: 'demo song cyan',
+                    btn8: 'demo song blue',
+                    btn9: 'demo song indigo',
+                    btn10: 'demo song purple',
+                    btn11: 'demo song fuchsia',
+                    btn12: 'demo song pink',
                 }
             }
         }
