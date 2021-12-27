@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/vitnasinec/radio#readme",
   "devDependencies": {
-    "electron": "^16.0.5"
+    "electron": "^16.0.5",
+    "tailwindcss": "^3.0.7"
   }
 }
